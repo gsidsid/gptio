@@ -1,6 +1,7 @@
 # GPTIO
 A simple typescript alternative to langchain in a few hundred LOC.
 
+![Demo Gif](examples/demo.gif)
 ---
 
 Langchain seemed a bit overkill to me so here’s my opinionated substitute for it. Some real issues for new users include:
@@ -20,15 +21,15 @@ npm i gptio
 
 Everything you need to get started:
 
-```ts
-import GPTIO from "./gptio";
+```js
+import GPTIO from "gptio";
 
 // Inputs to "actions" are passed through a single input object
-function add({a, b}: {a: number, b: number}) {
+function add({a, b}) {
   return a + b;
 }
 
-function multiply({a, b}: {a: number, b: number}) {
+function multiply({a, b}) {
   return a * b;
 }
 
@@ -74,14 +75,14 @@ const gptio = new GPTIO(
   ],
   // Optional custom callbacks for progress reporting or early exits
   {
-    beforeAction: (action: GptioAction, input: string) => {
+    beforeAction: (action, input) => {
       // Add custom logic that should be run before each action
       // throw an error to interrupt and end the run
     },
-    afterAction: (action: GptioAction, input: string, result: any) => {
+    afterAction: (action, input, result) => {
       // ...run after each action is executed
     },
-    afterThought: (thought: GptioResponse) => {
+    afterThought: (thought) => {
       // ...run after each thought is generated
     }
   },

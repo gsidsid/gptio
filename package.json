@@ -1,12 +1,12 @@
 {
   "name": "gptio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A dead simple langchain implementation for Open AI chat models.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node src/index.ts",
+    "dev": "ts-node examples/test.ts",
     "lint": "eslint . --ext .ts",
     "test": "jest --config jestconfig.json --passWithNoTests",
     "prepare": "npm run build",
