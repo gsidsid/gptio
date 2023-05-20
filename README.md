@@ -1,5 +1,5 @@
 # GPTIO
-A simple typescript alternative to langchain custom tools in a few hundred LOC.
+A simple typescript alternative to langchain custom tools in a few hundred LOC to buck all the pointless prompt psuedoscience and cut to the chase.
 
 ![Demo Gif](examples/demo.gif)
 
