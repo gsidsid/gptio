@@ -102,4 +102,6 @@ gptio.run("Get me the current time and identify if the number of minutes is a pr
 });
 ```
 
+GPTIO will reason through and execute actions in a sequence to solve whatever task, and will attempt to inform you if the actions you've provided are insufficient.
+
 If it’s missing a feature, do contribute to this repo, or just copy the source code– there isn’t a lot.
