@@ -2,9 +2,6 @@
 A simple typescript alternative to langchain in a few hundred LOC.
 
 ![Demo Gif](examples/demo.gif)
----
-
-Langchain seemed a bit overkill to me so here’s my opinionated substitute for it.
 
 ---
 
