@@ -71,7 +71,7 @@ const gptio = new GPTIO(
       ],
     }
   ],
-  // Optional custom callbacks for progress reporting or early exits
+  // Optional custom callbacks for progress reporting, custom memory schemes, or early exits
   {
     beforeAction: (action, input) => {
       // Add custom logic that should be run before each action
