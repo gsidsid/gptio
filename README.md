@@ -4,12 +4,7 @@ A simple typescript alternative to langchain in a few hundred LOC.
 ![Demo Gif](examples/demo.gif)
 ---
 
-Langchain seemed a bit overkill to me so here’s my opinionated substitute for it. Some real issues for new users include:
-
-- [Huge # of terms to understand just to get started: chains, agents, tools, prompt templates, parsers, etc.](https://js.langchain.com/docs/). [Many seemingly pointless wrapper classes and concepts.](https://www.reddit.com/r/LangChain/comments/13fcw36/langchain_is_pointless/)
-- Poorly adapted to chat models and dramatically increased context sizes that reduce the need for complex memory schemes (sliding window, summarization, etc).
-- Barely any support for providing multiple inputs to functions in TS/JS. No documentation for the StructuredTool class for this essential functionality outside [a fairly minimal Jupyter notebook](https://github.com/hwchase17/langchain/blob/master/docs/modules/agents/tools/multi_input_tool.ipynb).
-- Large influx of new, easy to use vector db providers mean long term memory can likely easily be implemented by users via custom tools. [Chroma](https://github.com/chroma-core/chroma), [Lance](https://github.com/lancedb/lancedb), etc.
+Langchain seemed a bit overkill to me so here’s my opinionated substitute for it.
 
 ---
 
