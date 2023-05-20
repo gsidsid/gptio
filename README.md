@@ -96,8 +96,10 @@ const gptio = new GPTIO(
 );
 
 gptio.run("Get me the current time and identify if the number of minutes is a prime number.").then((result) => {
+  // results look like { result: any, message: string }
   console.log(result);
 }).catch((error) => {
+  // errors look like { error: true, message: string }
   console.log(error);
 });
 ```
