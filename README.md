@@ -5,10 +5,16 @@ A simple typescript alternative to langchain in a few hundred LOC.
 
 ---
 
-Start by installing
+Start by installing:
 
 ```bash
 npm i gptio
+```
+
+Set an environment variable:
+
+```bash
+OPENAI_API_KEY=sk-***************************
 ```
 
 Everything you need to get started:
