@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node examples/test.ts",
+    "dev": "ts-node examples/demo.ts",
     "lint": "eslint . --ext .ts",
     "test": "jest --config jestconfig.json --passWithNoTests",
     "prepare": "npm run build",
