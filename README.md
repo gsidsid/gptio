@@ -2,7 +2,7 @@
 
 [![NPM Download Stats](https://img.shields.io/npm/dw/gptio?style=for-the-badge)](https://www.npmjs.com/package/gptio)
 
-A simple typescript alternative to langchain custom tools in a few hundred LOC to buck all the pointless prompt psuedoscience and cut to the chase.
+A simple typescript alternative to langchain custom tools in a few hundred LOC to buck all the pointless prompt psuedoscience.
 
 ![Demo Gif](examples/demo.gif)
 
