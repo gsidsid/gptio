@@ -90,6 +90,7 @@ const gptio = new GPTIO(
   // GPTIO options
   {
     // enable a built-in JS code execution action using safe-eval
+    // in smooth brain terms: GPTIO can self-author custom tools
     evaluation: true,
     // print the entire chain of thought at the end
     debug: true,
