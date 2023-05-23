@@ -1,4 +1,7 @@
 # GPTIO
+
+[![NPM Download Stats](https://img.shields.io/npm/dw/gptio?style=for-the-badge)](https://www.npmjs.com/package/gptio)
+
 A simple typescript alternative to langchain custom tools in a few hundred LOC to buck all the pointless prompt psuedoscience and cut to the chase.
 
 ![Demo Gif](examples/demo.gif)
@@ -97,9 +100,10 @@ const gptio = new GPTIO(
 
 gptio.run("Get me the current time and identify if the number of minutes is a prime number.").then((result) => {
   // results look like { result: any, message: string }
+  // errors look like { error: true, message: string }
   console.log(result);
 }).catch((error) => {
-  // errors look like { error: true, message: string }
+  // execution error (timeout, error thrown from callback, Open AI, etc.)
   console.log(error);
 });
 ```
