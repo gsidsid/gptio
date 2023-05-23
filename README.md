@@ -110,4 +110,18 @@ gptio.run("Get me the current time and identify if the number of minutes is a pr
 
 GPTIO will reason through and execute actions in a sequence to solve whatever task you give it in `run()`, and will attempt to inform you if the actions you've provided are insufficient.
 
+---
+
+### Memory
+
+Memory can be easily integrated with GPTIO in 2 easy steps /s
+
+1. Write a function `remember` (name it whatever you want) that accepts a query string as input, reads your memory provider (vector db, in memory store, idc), and returns a formatted string with the information you'd like to recall. Add it as an action into your GPTIO config.
+2. In the `afterAction`, save the result in your memory, better yet, tag it with `action.name`.
+
+Or, feel free to deal with [this](https://python.langchain.com/en/latest/reference/modules/memory.html).
+
+---
+
+
 If it’s missing a feature, do contribute to this repo, or just copy the source code– there isn’t a lot.
