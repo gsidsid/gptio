@@ -23,15 +23,18 @@ function trim(str: string, length: number, maxLineLengthRatio: number = 0.2) {
 }
 
 function prettifyResult(result: any) {
+  let res = "";
   try {
-    if (typeof result === "object") {
-      return trim(JSON5.stringify(result, null, 2), 1000);
+    if (typeof result !== "string") {
+      res = JSON5.stringify(result, null, 2);
     } else {
-      return trim(result.toString(), 1000);
+      res = result.toString();
     }
   } catch (error) {
-    return trim(result.toString(), 1000);
+    res = result.toString();
   }
+  // leave length limiting and formatting to the user
+  return res;
 }
 
 export {

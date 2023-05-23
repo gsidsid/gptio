@@ -88,7 +88,7 @@ const gptio = new GPTIO(
   {
     // enable a built-in JS code execution action using safe-eval
     evaluation: true,
-    // print the entire conversation at the end if there's an error
+    // print the entire chain of thought at the end
     debug: true,
     // timeout in seconds for the entire run
     timeout: 100

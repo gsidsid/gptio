@@ -77,8 +77,11 @@ class GPTIO {
         if (content.done) {
           if (content.error) {
             this.spinner.fail(content.message);
-            if (this.options.debug) {
-              console.log(`
+          } else {
+            this.spinner.succeed(content.message);
+          }
+          if (this.options.debug) {
+            console.log(`
 Debug info:
 
 AVAILABLE ACTIONS ---------------------\n
@@ -96,9 +99,6 @@ ${this.messages
   })
   .join("\n\n")}
 `);
-            }
-          } else {
-            this.spinner.succeed(content.message);
           }
         }
         this.spinner.prefixText = "[Thought]";
