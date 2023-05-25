@@ -289,6 +289,9 @@ ${this.messages
           }
         }
       } catch (error: any) {
+        if (this.options.debug) {
+          console.error(error);
+        }
         this.spinner.fail(`Error: ${error.message | error.toString()}`);
         reject(`Error: ${error.message | error.toString()}`);
       }
