@@ -11,18 +11,13 @@ const JSON5 = require("json5");
 // Load environment variables from a .env file
 dotenv.config();
 
-// Configure OpenAI API using environment variables
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
-
 class GPTIO {
   model: string;
   actions: GptioAction[];
   callbacks: GptioCallbacks;
   messages: ChatCompletionRequestMessage[];
   options: GptioOptions = {};
+  openai: OpenAIApi;
   result: any;
   spinner: any;
 
@@ -38,6 +33,16 @@ class GPTIO {
     callbacks: GptioCallbacks,
     options: GptioOptions = {}
   ) {
+    // Configure OpenAI API using environment variables
+    if (!process.env.OPENAI_API_KEY && !options.key) {
+      throw new Error(
+        "No OpenAI API key provided. Please provide an API key as an environment variable or in the options object as 'key'."
+      );
+    }
+    const configuration = new Configuration({
+      apiKey: process.env.OPENAI_API_KEY || options.key,
+    });
+    this.openai = new OpenAIApi(configuration);
     this.model = model;
     this.actions = actions;
     this.options = options;
@@ -197,7 +202,7 @@ ${this.messages
           content: JSON5.stringify(completion, null, 2),
         });
         while (!completion.done && !timeoutExceeded) {
-          completion = await openai.createChatCompletion({
+          completion = await this.openai.createChatCompletion({
             model: this.model,
             messages: this.messages,
             temperature: 0.2,

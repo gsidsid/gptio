@@ -1,6 +1,6 @@
 {
   "name": "gptio",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A dead simple langchain implementation for Open AI chat models.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

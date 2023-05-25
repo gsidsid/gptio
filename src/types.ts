@@ -30,4 +30,5 @@ export type GptioOptions = {
   evaluation?: boolean;
   debug?: boolean;
   timeout?: number;
+  key?: string;
 };
