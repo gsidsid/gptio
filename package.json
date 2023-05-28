@@ -1,6 +1,6 @@
 {
   "name": "gptio",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A dead simple langchain implementation for Open AI chat models.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -54,6 +54,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "esm-ts": "^0.0.9",
+    "exponential-backoff": "^3.1.1",
     "json5": "^2.2.3",
     "openai": "^3.2.1",
     "ora": "^6.3.1",

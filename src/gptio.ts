@@ -3,6 +3,7 @@ import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 import { GptioAction, GptioCallbacks, GptioOptions } from "./types";
 import { parseObject, prettifyResult } from "./utils";
 import generateSystemPrompt from "./prompt";
+import { backOff } from "exponential-backoff";
 import { requiresm } from "esm-ts";
 
 const safeEval = require("safe-eval");
@@ -202,11 +203,11 @@ ${this.messages
           content: JSON5.stringify(completion, null, 2),
         });
         while (!completion.done && !timeoutExceeded) {
-          completion = await this.openai.createChatCompletion({
+          completion = await backOff(() => this.openai.createChatCompletion({
             model: this.model,
             messages: this.messages,
             temperature: 0.2,
-          });
+          }));
           if (timeoutExceeded) {
             this.spinner.fail(`Timeout exceeded (${this.options.timeout} seconds)`);
             reject(`Timeout exceeded (${this.options.timeout} seconds)`);
