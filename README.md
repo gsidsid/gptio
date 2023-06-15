@@ -1,6 +1,6 @@
 # GPTIO
 
-**UPDATE: Many of the features this library provides have since been implemented nearly 1:1 into OpenAI's own API.**
+**UPDATE: Many of the features this library provides have since been implemented nearly 1:1 into OpenAI's own API as Function Calling.**
 
 A simple typescript alternative to langchain custom tools in a few hundred LOC to buck all the pointless prompt psuedoscience.
 
